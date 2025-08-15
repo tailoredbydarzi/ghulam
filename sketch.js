@@ -119,7 +119,7 @@ let bgMusic;
 
 // NEW: sfx on click in video area (array) + click padding
 let sfxClips = [];
-const SFX_FILES = ['sound1.wav', 'sound2.wav', 'sound3.wav', 'sound4.wav']; // add/remove files here
+const SFX_FILES = ['sound1.wav', 'sound2.wav', 'sound3.wav', 'sound4.wav','sound5.wav','sound6.wav']; // add/remove files here
 const SFX_COOLDOWN = 180; // ms between plays
 let lastSfxAt = 0;
 let videoRect = { x: 0, y: 0, w: 0, h: 0 }; // in DESIGN coords, updated each frame
@@ -220,7 +220,7 @@ function setup() {
   if (sfxClips[0] && sfxClips[0].setVolume) sfxClips[0].setVolume(0.7); // sound1.wav
   if (sfxClips[1] && sfxClips[1].setVolume) sfxClips[1].setVolume(0.9); // sound2.wav louder
   if (sfxClips[2] && sfxClips[2].setVolume) sfxClips[2].setVolume(0.4); // sound3.wav less loud
-  if (sfxClips[3] && sfxClips[3].setVolume) sfxClips[3].setVolume(0.2); // sound4.wav softer
+  if (sfxClips[3] && sfxClips[3].setVolume) sfxClips[3].setVolume(0.9); // sound4.wav softer
 
   // hint: only show if user hasn't seen it before
   // try {
@@ -715,7 +715,16 @@ function tryPlayClickSfx(designX, designY) {
     const loaded = sfxClips.filter(s => s && s.isLoaded && s.isLoaded());
     if (loaded.length === 0) return;
     lastSfxAt = now;
-    const s = random(loaded);
+    // Track last played sound
+    window._lastSfxIdx = window._lastSfxIdx || -1;
+    let idxs = loaded.map((_, i) => i);
+    // Remove last played index if possible
+    if (window._lastSfxIdx >= 0 && loaded.length > 1) {
+      idxs = idxs.filter(i => i !== window._lastSfxIdx);
+    }
+    const pickIdx = idxs[Math.floor(Math.random() * idxs.length)];
+    window._lastSfxIdx = pickIdx;
+    const s = loaded[pickIdx];
     // if (s.isPlaying()) s.stop(); // optional to avoid overlap
     s.play();
   }
