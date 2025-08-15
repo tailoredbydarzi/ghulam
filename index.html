@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Mobile UI – 390×844</title>
+
+  <!-- Critical for safe-area (iOS notch) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+  <link rel="stylesheet" href="style.css?v=3" />
+</head>
+<body>
+  <!-- Download button -->
+  <button id="download-btn" class="download-btn">
+  <img src="savebutton.png" alt="Download" style="height:24px;width:24px;vertical-align:middle;">
+</button>
+
+  <!-- Play sound button -->
+  <button id="play-sound-btn" class="play-sound-btn">
+  <img src="playmusic.png" alt="Play Sound" style="height:24px;width:24px;vertical-align:middle;">
+</button>
+
+  <!-- Center the p5 canvas -->
+  <main id="app"></main>
+
+  <!-- Name input box -->
+  <div id="name-input-container">
+    <input type="text" id="name-input" placeholder="Enter your name" maxlength="20">
+  </div>
+
+  <!-- Hidden probe to read safe-area insets in CSS px -->
+  <div id="safeprobe"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+  <script src="sketch.js?v=3"></script>
+</body>
+</html>
