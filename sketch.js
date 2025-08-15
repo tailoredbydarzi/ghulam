@@ -1,3 +1,9 @@
+
+// Copyright (c) 2025 Aashita Verma  
+// Do not use this code without permission, created for Darzi
+// https://www.aashitaverma.com
+
+
 // Download button logic
   const downloadBtn = document.getElementById('download-btn');
   if (downloadBtn) {
