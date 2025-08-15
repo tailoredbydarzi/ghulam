@@ -216,17 +216,11 @@ function setup() {
   }
 
   // Optional: set SFX volume a bit softer than bg
-    sfxClips.forEach((s, i) => {
-          if (i === 1) {
-            s && s.setVolume && s.setVolume(0.9); // sound2.wav louder
-          } else if (i === 2) {
-            s && s.setVolume && s.setVolume(0.4); // sound3.wav less loud
-          } else if (i === 3) {
-            s && s.setVolume && s.setVolume(0.2); // sound4.wav softer
-          } else {
-            s && s.setVolume && s.setVolume(0.7);
-        }
-    });
+  // Manually set each SFX volume
+  if (sfxClips[0] && sfxClips[0].setVolume) sfxClips[0].setVolume(0.7); // sound1.wav
+  if (sfxClips[1] && sfxClips[1].setVolume) sfxClips[1].setVolume(0.9); // sound2.wav louder
+  if (sfxClips[2] && sfxClips[2].setVolume) sfxClips[2].setVolume(0.4); // sound3.wav less loud
+  if (sfxClips[3] && sfxClips[3].setVolume) sfxClips[3].setVolume(0.2); // sound4.wav softer
 
   // hint: only show if user hasn't seen it before
   // try {
