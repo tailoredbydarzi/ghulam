@@ -119,7 +119,7 @@ let bgMusic;
 
 // NEW: sfx on click in video area (array) + click padding
 let sfxClips = [];
-const SFX_FILES = ['sound1.wav', 'sound2.wav', 'sound3.wav']; // add/remove files here
+const SFX_FILES = ['sound1.wav', 'sound2.wav', 'sound3.wav', 'sound4.wav']; // add/remove files here
 const SFX_COOLDOWN = 180; // ms between plays
 let lastSfxAt = 0;
 let videoRect = { x: 0, y: 0, w: 0, h: 0 }; // in DESIGN coords, updated each frame
@@ -216,7 +216,17 @@ function setup() {
   }
 
   // Optional: set SFX volume a bit softer than bg
-  sfxClips.forEach(s => s && s.setVolume && s.setVolume(0.7));
+    sfxClips.forEach((s, i) => {
+          if (i === 1) {
+            s && s.setVolume && s.setVolume(0.9); // sound2.wav louder
+          } else if (i === 2) {
+            s && s.setVolume && s.setVolume(0.4); // sound3.wav less loud
+          } else if (i === 3) {
+            s && s.setVolume && s.setVolume(0.2); // sound4.wav softer
+          } else {
+            s && s.setVolume && s.setVolume(0.7);
+        }
+    });
 
   // hint: only show if user hasn't seen it before
   // try {
