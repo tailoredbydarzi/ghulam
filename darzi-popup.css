@@ -1,0 +1,81 @@
+#darzi-popup-content {
+  background: #fff;
+  text-align: left;
+  padding: 20px 20px 20px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.08);
+  min-width: 300px;
+  max-width: 90vw;
+  position: relative;
+  margin: 32px;
+  font-family: 'Satoshi Variable', sans-serif;
+}
+.darzi-popup-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: left;
+}
+.darzi-popup-follow {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-align: left;
+}
+.darzi-footer {
+  color: #777777;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  text-align: left;
+}
+
+
+.darzi-footer-label {
+  display: inline-block;
+  min-width: 220px;
+}
+/* Basic popup styles */
+#darzi-popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30,30,30,0.32); /* semi-transparent dark overlay */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#darzi-popup-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #111;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.darzi-icons {
+  display: inline-flex;
+  gap: 8px;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+.darzi-icons img {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+.darzi-footer img {
+  width: 32px;
+  height: 32px;
+  //vertical-align: middle;
+  filter: grayscale(1) brightness(0.6);
+  opacity: 0.5;
+  //margin-left: 8px;
+}

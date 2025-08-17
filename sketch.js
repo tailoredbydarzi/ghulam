@@ -83,9 +83,22 @@
 
       // Restore input box
       if (inputContainer) setTimeout(() => { inputContainer.style.display = ''; }, 300);
+        // Show Stay Connected popup
+        setTimeout(() => {
+          const popup = document.getElementById('darzi-popup');
+          if (popup) popup.style.display = '';
+        }, 400);
     });
   }
 // ========================= CONFIG & GLOBALS =========================
+// Popup close logic
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('darzi-popup');
+  const closeBtn = document.getElementById('darzi-popup-close');
+  if (closeBtn && popup) {
+    closeBtn.onclick = () => { popup.style.display = 'none'; };
+  }
+});
 
 // ========================= CONFIG & GLOBALS =========================
 

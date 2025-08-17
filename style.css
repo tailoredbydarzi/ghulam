@@ -213,6 +213,14 @@ body {
   background: rgba(30,30,30,0.85);
   outline: none;
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .play-sound-btn:hover {
+    border-color: initial;
+    background: initial;
+    outline: initial;
+  }
+}
 .play-sound-btn.active {
   border-color: rgba(255,255,255,0.8);
   background: rgba(30,30,30,0.85);
